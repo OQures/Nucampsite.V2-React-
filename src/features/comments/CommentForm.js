@@ -17,7 +17,7 @@ const CommentForm = ({ campsiteId }) => {
 
   const dispatch = useDispatch();
 
-  const handleSubmit = ({ values }) => {
+  const handleSubmit = (values) => {
     const comment = {
       campsiteId: parseInt(campsiteId),
       rating: values.rating,
@@ -42,7 +42,7 @@ const CommentForm = ({ campsiteId }) => {
         <ModalBody>
           <Formik
             validate={validateCommentForm}
-            onSubmit={{ handleSubmit }}
+            onSubmit={handleSubmit}
             initialValues={{ rating: undefined, author: "", commentText: "" }}
           >
             <Form>
